@@ -23,5 +23,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', event_list_view, name='event_list'),
     path('events/<int:event_id>/', event_detail_view, name='event_detail'),
-    path('apply/<int:event_id>/', application_form_view, name='application_form'),
+    path('events/<int:event_id>/apply/', application_form_view, name='application_form'),
 ]
