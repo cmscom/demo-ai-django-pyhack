@@ -34,3 +34,16 @@ ruff check .
 ```bash
 isort .
 ```
+
+## Hello World 機能
+ルートパス("/")へアクセスすると "Hello World" が表示されます。
+
+## テスト実行方法
+pytestを利用してテストを実行します:
+```bash
+pytest
+```
+
+テストは以下を確認します：
+- Hello World機能が正常に動作すること
+- ステータスコード200が返されること
