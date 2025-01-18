@@ -1,8 +1,10 @@
+from datetime import timedelta
+
 import pytest
 from django.test import Client
 from django.utils import timezone
-from datetime import timedelta
-from .models import Event, Application
+
+from .models import Application, Event
 
 
 @pytest.mark.django_db
