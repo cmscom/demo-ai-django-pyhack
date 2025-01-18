@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>イベント詳細</title>
+  </head>
+  <body>
+    <h1>{{ event.title }}</h1>
+    <p>開始日時: {{ event.start_date|date:"Y-m-d H:i" }}</p>
+    <p>終了日時: {{ event.end_date|date:"Y-m-d H:i" }}</p>
+    <p>定員: {{ event.capacity }}</p>
+    <p>{{ event.description }}</p>
+
+    <!-- 申込みフォームページへのリンク -->
+    <p><a href="{% url 'application_form' event.id %}">申込みフォームへ進む</a></p>
+  </body>
+</html>

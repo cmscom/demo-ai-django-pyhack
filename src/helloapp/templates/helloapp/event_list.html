@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>イベント一覧</title>
+  </head>
+  <body>
+    <h1>イベント一覧</h1>
+    <ul>
+      {% for event in events %}
+        <li>
+          <a href="{% url 'event_detail' event.id %}">
+            {{ event.title }}
+          </a> ({{ event.start_date|date:"Y-m-d H:i" }} ~ {{ event.end_date|date:"Y-m-d H:i" }})
+        </li>
+      {% endfor %}
+    </ul>
+  </body>
+</html>

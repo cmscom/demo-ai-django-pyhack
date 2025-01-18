@@ -17,9 +17,13 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 
-from helloapp.views import hello_world_view
+from helloapp.views import (
+    event_list_view, event_detail_view, application_form_view
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', hello_world_view, name='hello_world'),
+    path('', event_list_view, name='event_list'),
+    path('events/<int:event_id>/', event_detail_view, name='event_detail'),
+    path('apply/<int:event_id>/', application_form_view, name='application_form'),
 ]
