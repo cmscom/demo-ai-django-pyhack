@@ -1,0 +1,28 @@
+<!-- templates/events/event_list.html -->
+{% extends 'events/base.html' %}
+
+{% block title %}イベント一覧{% endblock %}
+
+{% block content %}
+<h1>イベント一覧</h1>
+<div class="row">
+    {% for event in events %}
+        <div class="col-md-4 mb-4">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">{{ event.name }}</h5>
+                    <p class="card-text">{{ event.description|truncatewords:30 }}</p>
+                    <p class="card-text">
+                        <small class="text-muted">
+                            主催者: {{ event.organizer.display_name }}<br>
+                            開催日時: {{ event.event_date }}
+                        </small>
+                    </p>
+                    <a href="{% url 'event_detail' event.id %}" class="btn btn-primary">詳細を見る</a>
+                </div>
+            </div>
+        </div>
+    {% endfor %}
+</div>
+{% endblock %}
+

@@ -1,0 +1,25 @@
+<!-- templates/events/event_form.html -->
+{% extends 'events/base.html' %}
+
+{% block title %}イベント作成{% endblock %}
+
+{% block content %}
+<h1>イベント作成</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.name.label_tag }}
+        {{ form.name }}
+    </div>
+    <div class="mb-3">
+        {{ form.description.label_tag }}
+        {{ form.description }}
+    </div>
+    <div class="mb-3">
+        {{ form.event_date.label_tag }}
+        {{ form.event_date }}
+    </div>
+    <button type="submit" class="btn btn-primary">作成</button>
+</form>
+{% endblock %}
+

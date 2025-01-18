@@ -1,0 +1,33 @@
+<!-- templates/events/event_detail.html -->
+{% extends 'events/base.html' %}
+
+{% block title %}{{ event.name }}{% endblock %}
+
+{% block content %}
+<div class="card">
+    <div class="card-body">
+        <h1>{{ event.name }}</h1>
+        <p class="lead">{{ event.description }}</p>
+        <p>
+            <strong>主催者:</strong> {{ event.organizer.display_name }}<br>
+            <strong>開催日時:</strong> {{ event.event_date }}<br>
+            <strong>作成日時:</strong> {{ event.created_at }}
+        </p>
+
+        {% if user.is_authenticated and not is_participant %}
+            <form method="post" action="{% url 'event_participate' event.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-primary">参加する</button>
+            </form>
+        {% endif %}
+
+        <h3 class="mt-4">参加者一覧</h3>
+        <ul class="list-group">
+            {% for participant in participants %}
+                <li class="list-group-item">{{ participant.display_name }}</li>
+            {% endfor %}
+        </ul>
+    </div>
+</div>
+{% endblock %}
+

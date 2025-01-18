@@ -1,0 +1,33 @@
+<!-- templates/events/user_register.html -->
+{% extends 'events/base.html' %}
+
+{% block title %}ユーザー登録{% endblock %}
+
+{% block content %}
+<h1>ユーザー登録</h1>
+<form method="post">
+    {% csrf_token %}
+    <div class="mb-3">
+        {{ form.display_name.label_tag }}
+        {{ form.display_name }}
+    </div>
+    <div class="mb-3">
+        {{ form.email.label_tag }}
+        {{ form.email }}
+    </div>
+    <div class="mb-3">
+        {{ form.username.label_tag }}
+        {{ form.username }}
+    </div>
+    <div class="mb-3">
+        {{ form.password.label_tag }}
+        {{ form.password }}
+    </div>
+    <div class="mb-3">
+        {{ form.password_confirmation.label_tag }}
+        {{ form.password_confirmation }}
+    </div>
+    <button type="submit" class="btn btn-primary">登録</button>
+</form>
+{% endblock %}
+
