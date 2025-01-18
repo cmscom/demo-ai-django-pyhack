@@ -30,7 +30,11 @@ class Migration(migrations.Migration):
                 ('applicant_name', models.CharField(max_length=100)),
                 ('applicant_email', models.EmailField(max_length=254)),
                 ('created_at', models.DateTimeField(auto_now_add=True)),
-                ('event', models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, related_name='applications', to='helloapp.event')),
+                ('event', models.ForeignKey(
+                    on_delete=django.db.models.deletion.CASCADE,
+                    related_name='applications',
+                    to='helloapp.event',
+                )),
             ],
         ),
     ]
