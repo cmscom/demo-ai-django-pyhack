@@ -18,7 +18,9 @@ from django.contrib import admin
 from django.urls import path
 
 from helloapp.views import (
-    event_list_view, event_detail_view, application_form_view
+    application_form_view,
+    event_detail_view,
+    event_list_view,
 )
 
 urlpatterns = [

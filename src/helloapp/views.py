@@ -1,7 +1,8 @@
-from django.shortcuts import render, get_object_or_404, redirect
 from django.http import HttpResponse
-from .models import Event
+from django.shortcuts import get_object_or_404, redirect, render
+
 from .forms import ApplicationForm
+from .models import Event
 
 
 def hello_world_view(request):
