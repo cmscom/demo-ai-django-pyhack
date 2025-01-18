@@ -8,11 +8,11 @@ from .models import Application, Event
 
 
 @pytest.mark.django_db
-def test_hello_world():
+def test_event_list():
     client = Client()
     response = client.get("/")
     assert response.status_code == 200
-    assert b"Hello World" in response.content
+    assert "イベント一覧" in response.content.decode('utf-8')
 
 
 @pytest.mark.django_db
