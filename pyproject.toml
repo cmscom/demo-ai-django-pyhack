@@ -45,8 +45,8 @@ exclude = [
     "node_modules",
     "venv",
 ]
-# Same as Black.
-line-length = 88
+# Updated per request to allow longer lines.
+line-length = 120
 # Allow unused variables when underscore-prefixed.
 dummy-variable-rgx = "^(_+|(_+[a-zA-Z0-9_]*[a-zA-Z0-9]+?))$"
 # Target Python 3.12.
